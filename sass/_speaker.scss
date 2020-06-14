@@ -1,0 +1,63 @@
+/* speaker section */
+.speaker {
+  padding: 5rem 0 7rem;
+  background-color: rgba(33, 40, 53, 0.05);
+
+  @include until($md) {
+    padding: 3rem 0;
+  }
+}
+
+.speaker-left {
+  position: relative;
+  padding-left: 1.5rem;
+  padding-right: 0.25rem;
+
+  @include until($md) {
+    text-align: center;
+  }
+}
+
+.speaker-right {
+  padding-left: 2.75rem;
+  padding-right: 0.25rem;
+
+  @include until($md) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1rem;
+  }
+}
+
+.speaker-content {
+  align-items: center;
+  padding-top: 6rem;
+
+  @include until($md) {
+    padding-top: 3rem;
+  }
+}
+
+.speaker-btn {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  @include transform(translateX(-50%));
+}
+
+.speaker-text {
+  h3 {
+    font-size: 2.25rem;
+  }
+
+  .speaker-company {
+    margin-bottom: 2rem;
+    font-size: 1.625rem;
+    line-height: 1.15;
+  }
+
+  .speaker-highlight {
+    font-weight: 500;
+    color: $secondary-color;
+  }
+}

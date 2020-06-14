@@ -1,0 +1,39 @@
+// transform
+@mixin transform($object) {
+	-webkit-transform: $object;
+	-moz-transform: $object;
+	-ms-transform: $object;
+	transform: $object;
+}
+
+// Responsive breakpoint manager
+@mixin at-least($device-width) {
+  @media screen and (min-width: $device-width) {
+    @content;
+  }
+}
+
+@mixin until($device-width) {
+  @media screen and (max-width: $device-width - 1) {
+    @content;
+  }
+}
+
+// input placeholder
+@mixin placeholder {
+  &::-webkit-input-placeholder {
+    @content;
+  }
+  &::-moz-placeholder{
+    @content;
+  }
+  &:-ms-input-placeholder{
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::placeholder {
+    @content;
+  }
+}

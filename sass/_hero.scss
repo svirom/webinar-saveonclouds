@@ -1,0 +1,241 @@
+/* hero section */
+.hero {
+  display: flex;
+  align-items: flex-end;
+  min-height: 754px;
+  color: #fff;
+  background-color: #212835;
+}
+
+.hero-left-wrapper, .hero-right-wrapper {
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-left-wrapper {
+  padding-right: 1rem;
+
+  @include until($lg) {
+    padding-right: 0;
+  }
+}
+
+.hero-right-wrapper {
+  position: relative;
+  justify-content: flex-end;
+  padding-left: 1rem;
+
+  &::before, &::after {
+    position: absolute;
+    display: block;
+    z-index: 10;
+
+    @include until($sm) {
+      display: none;
+    }
+  }
+
+  &::before {
+    content: url('../img/hero-bottom-left.png');
+    left: 0;
+    bottom: -7rem;
+  }
+
+  &::after {
+    content: url('../img/hero-bottom-right.png');
+    right: -0.75rem;
+    bottom: -3px;
+  }
+
+  @include until($lg) {
+    padding-left: 0;
+  }
+}
+
+.hero-left {
+  padding-top: 3.75rem;
+  padding-bottom: 6.875rem;
+
+  @include until($lg) {
+    padding-bottom: 4.5rem;
+  }
+}
+
+.hero-right {
+  position: relative;
+  flex-basis: 100%;
+  max-width: 100%;
+  padding: 2.375rem 2.375rem 7rem;
+  border-radius: 1.125rem;
+  background-color: #303748;
+
+  &::before {
+    position: absolute;
+    display: block;
+    content: url('../img/hero-top.png');
+    left: -9rem;
+    bottom: calc(100% - 3px);
+
+    @include until($laptop) {
+      @include transform(scale(0.75));
+      left: -14.5rem;
+      bottom: calc(100% - 27px);
+    }
+
+    @include until($lg) {
+      display: none;
+    }
+  }
+
+  @include until($sm) {
+    padding: 1.75rem;
+  }
+}
+
+.webinar-time {
+  margin-bottom: 3.75rem;
+
+  @include until($lg) {
+    margin-bottom: 2rem;
+  }
+}
+
+.webinar-date {
+  p {
+    font-size: 1.5625rem;
+    font-weight: bold;
+
+    @include until($md) {
+      font-size: 1.25rem;
+    }
+  }
+
+  span {
+    padding-right: 0.5rem;
+    color: $secondary-color;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+  }
+}
+
+.webinar-icon {
+  margin-bottom: 1.0625rem;
+  width: 2.375rem;
+  height: 2.375rem;
+  background: url("data:image/svg+xml,%3Csvg width='38' height='38' viewBox='0 0 38 38' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M28.6484 17.0703C29.4682 17.0703 30.1328 16.4057 30.1328 15.5859C30.1328 14.7661 29.4682 14.1016 28.6484 14.1016C27.8286 14.1016 27.1641 14.7661 27.1641 15.5859C27.1641 16.4057 27.8286 17.0703 28.6484 17.0703Z' fill='white'/%3E%3Cpath d='M32.0625 2.96875H30.1328V1.48438C30.1328 0.664555 29.4683 0 28.6484 0C27.8286 0 27.1641 0.664555 27.1641 1.48438V2.96875H20.4102V1.48438C20.4102 0.664555 19.7456 0 18.9258 0C18.106 0 17.4414 0.664555 17.4414 1.48438V2.96875H10.7617V1.48438C10.7617 0.664555 10.0972 0 9.27734 0C8.45752 0 7.79297 0.664555 7.79297 1.48438V2.96875H5.9375C2.66356 2.96875 0 5.63231 0 8.90625V32.0625C0 35.3364 2.66356 38 5.9375 38H17.293C18.1128 38 18.7773 37.3354 18.7773 36.5156C18.7773 35.6958 18.1128 35.0312 17.293 35.0312H5.9375C4.30053 35.0312 2.96875 33.6995 2.96875 32.0625V8.90625C2.96875 7.26928 4.30053 5.9375 5.9375 5.9375H7.79297V7.42188C7.79297 8.2417 8.45752 8.90625 9.27734 8.90625C10.0972 8.90625 10.7617 8.2417 10.7617 7.42188V5.9375H17.4414V7.42188C17.4414 8.2417 18.106 8.90625 18.9258 8.90625C19.7456 8.90625 20.4102 8.2417 20.4102 7.42188V5.9375H27.1641V7.42188C27.1641 8.2417 27.8286 8.90625 28.6484 8.90625C29.4683 8.90625 30.1328 8.2417 30.1328 7.42188V5.9375H32.0625C33.6995 5.9375 35.0312 7.26928 35.0312 8.90625V17.3672C35.0312 18.187 35.6958 18.8516 36.5156 18.8516C37.3354 18.8516 38 18.187 38 17.3672V8.90625C38 5.63231 35.3364 2.96875 32.0625 2.96875Z' fill='white'/%3E%3Cpath d='M29.0195 20.0391C24.0677 20.0391 20.0391 24.0677 20.0391 29.0195C20.0391 33.9714 24.0677 38 29.0195 38C33.9714 38 38 33.9714 38 29.0195C38 24.0677 33.9714 20.0391 29.0195 20.0391ZM29.0195 35.0312C25.7047 35.0312 23.0078 32.3344 23.0078 29.0195C23.0078 25.7046 25.7047 23.0078 29.0195 23.0078C32.3344 23.0078 35.0312 25.7046 35.0312 29.0195C35.0312 32.3344 32.3344 35.0312 29.0195 35.0312Z' fill='white'/%3E%3Cpath d='M31.1719 27.5352H30.5039V25.9766C30.5039 25.1567 29.8394 24.4922 29.0195 24.4922C28.1997 24.4922 27.5352 25.1567 27.5352 25.9766V29.0195C27.5352 29.8394 28.1997 30.5039 29.0195 30.5039H31.1719C31.9917 30.5039 32.6562 29.8394 32.6562 29.0195C32.6562 28.1997 31.9917 27.5352 31.1719 27.5352Z' fill='white'/%3E%3Cpath d='M22.1914 17.0703C23.0112 17.0703 23.6758 16.4057 23.6758 15.5859C23.6758 14.7661 23.0112 14.1016 22.1914 14.1016C21.3716 14.1016 20.707 14.7661 20.707 15.5859C20.707 16.4057 21.3716 17.0703 22.1914 17.0703Z' fill='white'/%3E%3Cpath d='M15.7344 23.5273C16.5542 23.5273 17.2188 22.8628 17.2188 22.043C17.2188 21.2232 16.5542 20.5586 15.7344 20.5586C14.9146 20.5586 14.25 21.2232 14.25 22.043C14.25 22.8628 14.9146 23.5273 15.7344 23.5273Z' fill='white'/%3E%3Cpath d='M9.27734 17.0703C10.0971 17.0703 10.7617 16.4057 10.7617 15.5859C10.7617 14.7661 10.0971 14.1016 9.27734 14.1016C8.45755 14.1016 7.79297 14.7661 7.79297 15.5859C7.79297 16.4057 8.45755 17.0703 9.27734 17.0703Z' fill='white'/%3E%3Cpath d='M9.27734 23.5273C10.0971 23.5273 10.7617 22.8628 10.7617 22.043C10.7617 21.2232 10.0971 20.5586 9.27734 20.5586C8.45755 20.5586 7.79297 21.2232 7.79297 22.043C7.79297 22.8628 8.45755 23.5273 9.27734 23.5273Z' fill='white'/%3E%3Cpath d='M9.27734 29.9844C10.0971 29.9844 10.7617 29.3198 10.7617 28.5C10.7617 27.6802 10.0971 27.0156 9.27734 27.0156C8.45755 27.0156 7.79297 27.6802 7.79297 28.5C7.79297 29.3198 8.45755 29.9844 9.27734 29.9844Z' fill='white'/%3E%3Cpath d='M15.7344 29.9844C16.5542 29.9844 17.2188 29.3198 17.2188 28.5C17.2188 27.6802 16.5542 27.0156 15.7344 27.0156C14.9146 27.0156 14.25 27.6802 14.25 28.5C14.25 29.3198 14.9146 29.9844 15.7344 29.9844Z' fill='white'/%3E%3Cpath d='M15.7344 17.0703C16.5542 17.0703 17.2188 16.4057 17.2188 15.5859C17.2188 14.7661 16.5542 14.1016 15.7344 14.1016C14.9146 14.1016 14.25 14.7661 14.25 15.5859C14.25 16.4057 14.9146 17.0703 15.7344 17.0703Z' fill='white'/%3E%3C/svg%3E") center center no-repeat;
+  background-size: 2.375rem;
+}
+
+.webinar-form-wrapper {
+  position: relative;
+  padding: 0.5rem 3.3125rem 3.0625rem;
+  background-color: #fff;
+
+  .form-title {
+    margin-bottom: 1rem;
+    font-size: 3rem;
+    font-weight: 900;
+    color: $main-color;
+
+    @include until($laptop) {
+      font-size: 2.5rem;
+    }
+
+    @include until($md) {
+      font-size: 2rem;
+    }
+  }
+
+  @include until($sm) {
+    padding: 0.5rem 1.5rem 2.5rem;
+  }
+}
+
+.webinar-form {
+  padding: 0 3.6875rem 2rem;
+
+  .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.15;
+    color: $secondary-color;
+  }
+
+  input {
+    position: relative;
+    padding-left: 3rem;
+    width: 100%;
+    height: 2.75rem;
+    border: 0.5px solid rgba(0, 0, 0, 0.05);
+    background: linear-gradient(0deg, #FCFCFC, #FCFCFC), linear-gradient(0deg, #FFFFFF, #FFFFFF), #FFFFFF;
+
+    @include placeholder {
+      font-family: $main-font;
+      font-size: 0.875rem;
+      color: rgba(48, 55, 72, 0.15);
+      letter-spacing: 1px;
+    }
+
+    & ~ label {
+      display: block;
+      position: absolute;
+      margin-bottom: 0;
+      width: 2.75rem;
+      height: 2.75rem;
+      left: 0;
+      bottom: 0;
+      background-size: 20px; 
+      background-repeat: no-repeat;
+      background-position: left 12px center;
+    }
+
+    &.webinar-input-text {
+      & ~ label {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M17.0711 12.9289C15.9819 11.8398 14.6855 11.0335 13.2711 10.5454C14.786 9.50199 15.7812 7.75578 15.7812 5.78125C15.7812 2.59348 13.1878 0 10 0C6.81223 0 4.21875 2.59348 4.21875 5.78125C4.21875 7.75578 5.21402 9.50199 6.72898 10.5454C5.31453 11.0335 4.01813 11.8398 2.92895 12.9289C1.0402 14.8177 0 17.3289 0 20H1.5625C1.5625 15.3475 5.34754 11.5625 10 11.5625C14.6525 11.5625 18.4375 15.3475 18.4375 20H20C20 17.3289 18.9598 14.8177 17.0711 12.9289ZM10 10C7.67379 10 5.78125 8.1075 5.78125 5.78125C5.78125 3.455 7.67379 1.5625 10 1.5625C12.3262 1.5625 14.2188 3.455 14.2188 5.78125C14.2188 8.1075 12.3262 10 10 10Z' fill='%23303748'/%3E%3C/svg%3E");
+      }
+    }
+
+    &.webinar-input-email {
+      & ~ label {
+        background-image: url("data:image/svg+xml,%3Csvg width='20' height='16' viewBox='0 0 20 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.2422 0H1.75781C0.789766 0 0 0.788906 0 1.75781V13.4766C0 14.4422 0.78625 15.2344 1.75781 15.2344H18.2422C19.2078 15.2344 20 14.4481 20 13.4766V1.75781C20 0.792188 19.2138 0 18.2422 0ZM17.9995 1.17188L10.0373 9.1341L2.00621 1.17188H17.9995ZM1.17188 13.2339V1.99488L6.81559 7.5902L1.17188 13.2339ZM2.00051 14.0625L7.64777 8.41523L9.62656 10.377C9.85563 10.6041 10.2253 10.6034 10.4534 10.3752L12.3828 8.44582L17.9995 14.0625H2.00051ZM18.8281 13.2339L13.2114 7.61719L18.8281 2.00047V13.2339Z' fill='%23303748'/%3E%3C/svg%3E");
+      }
+    }
+  }
+
+  .btn {
+    position: absolute;
+    left: 50%;
+    @include transform(translateX(-50%));
+    bottom: -2.5625rem;
+    padding: 1.875rem 2.5rem;
+    font-size: 1.125rem;
+
+    @include until($laptop) {
+      padding: 1.25rem 1.5rem;
+      bottom: -1rem;
+    }
+  }
+
+  @include until($laptop) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+.form-circle {
+  position: absolute;
+  left: 50%;
+  bottom: 1rem;
+  @include transform(translateX(-50%));
+  width: 2.65rem;
+  height: 2.65rem;
+  border-radius: 50%;
+  background-color: rgba(236, 235, 228, 0.1);
+}
